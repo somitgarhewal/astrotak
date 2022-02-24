@@ -1,0 +1,20 @@
+.walletBar {
+    display: flex;
+    justify-content: space-between;
+    background-color: blue;
+    color: #fff;
+    padding: 20px;
+    .walletBalance {
+        font-weight: 800;
+        font-size: 18px;
+    }
+    .addMoney {
+        background: #fff;
+        color: blue;
+        border: 2px solid black;
+        border-radius: 9px;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 4px 10px;
+    }
+}

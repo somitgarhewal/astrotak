@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: space-between;
+    margin-top: 12px;
+    .hamburger{
+        height: 30px;
+    }
+    .logo {
+        height: 65px;
+        margin-top: -13px;
+    }
+    .profile {
+        height: 30px;
+    }
+}

@@ -1,0 +1,24 @@
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+
+    .footerRow {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        .button {
+            display: grid;
+            justify-items: center;
+
+            img {
+                height: 28px;
+            }
+
+            label {
+                color: gray;
+            }
+        }
+    }
+}
