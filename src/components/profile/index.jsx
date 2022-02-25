@@ -1,8 +1,13 @@
 import React from 'react'
+import Header from './header'
+
+import './profile.scss'
 
 const Profile = () => {
   return (
-    <div>Profile</div>
+    <div className='profile'>
+        <Header />
+    </div>
   )
 }
 

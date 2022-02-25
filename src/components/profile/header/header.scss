@@ -1,0 +1,28 @@
+.profileHeader {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+   
+    .backButton {
+        width: 2px;
+        border-bottom: 2px solid #f28e23;
+        height: 2px;
+        border-left: 2px solid #f28e23;
+        padding: 5px;
+        transform: rotate(45deg);
+    }
+    
+    .logo {
+        height: 65px;
+        margin-top: -13px;
+    }
+
+    .logout {
+        border: 1px solid #f28e23;
+        color: #f28e23;
+        background: #fff;
+        border-radius: 5px;
+    }
+   
+}
