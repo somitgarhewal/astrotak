@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { getAllCategories } from '../../apis'
+import AboutAskQuestion from './aboutAskQuestion'
 import Body from './body'
 import BottomButton from './bottomButton'
 import Footer from './footer'
@@ -38,6 +39,7 @@ const AskQuestion = () => {
         question={question}
         setQuestion={setQuestion}
       />
+      <AboutAskQuestion />
       <BottomButton category={selectedCategory} />
       <Footer />
     </div>
