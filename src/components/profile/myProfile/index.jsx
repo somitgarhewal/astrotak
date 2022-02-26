@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import ProfileWalletBar from './profileWalletBar'
 import './myProfile.scss'
+import ProfileTable from './profileTable'
 
-const MyProfile = () => {
+const MyProfile = ({ relativeList }) => {
     const [subTab, setSubTab] = useState('basicProfile')
+    const [displayProfiles, setDisplayProfiles] = useState(true)
 
     return (
         <div className="myProfileContainer">
@@ -10,6 +13,14 @@ const MyProfile = () => {
                 <div className={subTab === 'basicProfile' && 'activeSubTab'} onClick={() => setSubTab('basicProfile')}>Basic Profile</div>
                 <div className={subTab === 'friendsAndFamily' && 'activeSubTab'} onClick={() => setSubTab('friendsAndFamily')}>Friends and Family Profile</div>
             </div>
+            {
+                subTab === 'friendsAndFamily' ?
+                    <div className="">
+                        <ProfileWalletBar />
+                        <ProfileTable relativeList={relativeList} />
+                    </div>
+                    : null
+            }
         </div>
     )
 }

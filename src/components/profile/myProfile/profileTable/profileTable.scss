@@ -1,0 +1,63 @@
+.profileTable {
+    .tableHeader {
+        display: flex;
+        padding: 20px 10px;
+
+        .nameCol{
+            width: 25%;
+        }
+        .DOBCol{
+            width: 20%;
+        }
+        .TOBCol {
+            width: 15%;
+        }
+        .RelationCol {
+            width: 20%;
+        }
+        .othersCol {
+            width: 20%;
+        }
+    }
+
+    .card {
+        display: flex;
+        flex-direction: row;
+        padding: 20px 8px;
+        align-items: center;
+        gap: 5px;
+        margin: 10px 0;
+        border: solid 2px rgba(0, 0, 0, 0.03);
+        box-shadow: 1px 3px rgb(0 0 0 / 15%);
+
+        .nameCol{
+            width: 25%;
+            font-size: 14px;
+        }
+        .DOBCol{
+            width: 20%;
+            font-size: 14px;
+        }
+        .TOBCol {
+            width: 15%;
+            font-size: 14px;
+        }
+        .RelationCol {
+            width: 20%;
+            font-size: 14px;
+        }
+        .editCol {
+            color: #ff944e;
+            width: 10%;
+            text-align: center;
+        }
+        .deleteCol {
+            width: 10%;
+            color: rgb(248, 3, 3);
+            text-align: center;
+        }
+        .fa {
+            font-size: 22px;
+        }
+    }
+}
