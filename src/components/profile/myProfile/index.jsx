@@ -18,6 +18,9 @@ const MyProfile = ({ relativeList }) => {
                     <div className="">
                         <ProfileWalletBar />
                         <ProfileTable relativeList={relativeList} />
+                        <div className="addNewProfile">
+                            <button className='addNewProfileButton'>+ Add New Profile</button>
+                        </div>
                     </div>
                     : null
             }

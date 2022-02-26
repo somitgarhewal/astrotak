@@ -21,5 +21,16 @@
             text-align: center;
         }
     }
+    .addNewProfile {
+        text-align: center;
+        padding: 50px 0px;   
 
+        .addNewProfileButton {
+            padding: 8px;
+            color: #fff;
+            background: #ff944e;
+            border: none;
+            border-radius: 6px;
+        }
+    }
 }
