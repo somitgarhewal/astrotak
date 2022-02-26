@@ -1,14 +1,17 @@
 import React from 'react'
+import { useNavigate } from 'react-router'
 import Icon from '../../../assets/icon.png'
 
 import './header.scss'
 
 const Header = () => {
+
+    const navigate = useNavigate()
+
     return (
         <div className="">
             <div className='profileHeader'>
-                {/* <img className='hamburger' src={Hamburger} /> */}
-                <div className="backButton"></div>
+                <div className="backButton" onClick={() => navigate('/')}></div>
                 <img className='logo' src={Icon} />
                 <button className='logout'>Logout</button>
             </div>

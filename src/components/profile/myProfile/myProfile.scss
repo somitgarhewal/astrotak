@@ -1,0 +1,24 @@
+.myProfileContainer {
+    background: #fafafa;;
+    padding: 10px;
+    height: 90vh;
+    .subTab {
+        display: flex;
+        background: #fff;
+        padding: 1px 0;
+        font-size: 14px;
+
+        .activeSubTab {
+            background: coral;
+            border-radius: 5px;
+            color: #fff;
+        }
+        
+        > div{
+            padding: 14px 2px;
+            width: 50%;
+            text-align: center;
+        }
+    }
+
+}

@@ -1,3 +1,20 @@
-.profile {
-    padding: 14px;
+.profilePage {
+
+    .tab {
+        padding: 0 14px;
+        display: flex;
+
+        .activeTab {
+            color: coral;
+            border-bottom: 2px solid coral;
+        }
+        
+        > div{
+            width: 50%;
+            text-align: center;
+            padding: 10px;
+        }
+    }
+
+  
 }
