@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './profileForm.scss'
 import Select from 'react-select'
 import axios from 'axios'
-import { addRelativeProfile } from '../../../../apis'
+import { addRelativeProfile, getLocations, updateRelativeProfile } from '../../../../apis'
 
-const ProfileForm = () => {
+const ProfileForm = ({ profile, setProfileToEdit, setDisplayProfiles }) => {
 
     const [name, setName] = useState('')
     const [date, setDate] = useState('')
@@ -18,6 +18,23 @@ const ProfileForm = () => {
     const [relation, setRelation] = useState('1')
     const [locations, setLocations] = useState([])
 
+
+    useEffect(() => {
+        if (profile != null) {
+            setName(profile.fullName)
+            setDate(profile.birthDetails.dobDay)
+            setMonth(profile.birthDetails.dobMonth)
+            setYear(profile.birthDetails.dobYear)
+            setHour(profile.birthDetails.tobHour)
+            setMinute(profile.birthDetails.tobMin)
+            setMeridiem(profile.birthDetails.meridiem)
+            setLocations([{ value: profile.birthPlace.placeId, label: profile.birthPlace.placeName }])
+            setPlace({ value: profile.birthPlace.placeId, label: profile.birthPlace.placeName })
+            setRelation(profile.relation)
+            setGender(profile.gender)
+        }
+    }, [])
+
     const converToOptions = (data) => {
         const options = data.map(item => {
             return {
@@ -29,7 +46,7 @@ const ProfileForm = () => {
     }
 
     const handleSelectChange = (val) => {
-        axios(`https://staging-api.astrotak.com/api/location/place?inputPlace=${val}`)
+        axios(`${getLocations}${val}`)
             .then(res => {
                 console.log('res', res)
                 if (res?.data) {
@@ -57,17 +74,30 @@ const ProfileForm = () => {
             relationId: relation,
             firstName: name.split(' ')[0],
             lastName: name.split(' ')[1] || '',
+            ...profile
         }
         console.log('data', data);
         const headers = {
             'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4ODA5NzY1MTkxIiwiUm9sZXMiOltdLCJleHAiOjE2NzY0NjE0NzEsImlhdCI6MTY0NDkyNTQ3MX0.EVAhZLNeuKd7e7BstsGW5lYEtggbSfLD_aKqGFLpidgL7UHZTBues0MUQR8sqMD1267V4Y_VheBHpxwKWKA3lQ'
         }
+        let request = ''
+        let requestType = 'post'
+        if (profile != null) {
+            request = `${updateRelativeProfile}${profile.uuid}`
+            requestType = 'put'
+        } else {
+            request = addRelativeProfile
+        }
 
-        axios.post(addRelativeProfile, data, {
+        axios[`${requestType}`](request, data, {
             headers: headers
         })
             .then((response) => {
                 alert(response.data.message)
+                if (profile != null) {
+                    setDisplayProfiles(true)
+                    setProfileToEdit(-1)
+                }
             })
             .catch((error) => {
                 alert(error)

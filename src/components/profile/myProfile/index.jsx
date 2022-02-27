@@ -7,7 +7,12 @@ import ProfileForm from './profileForm'
 const MyProfile = ({ relativeList }) => {
     const [subTab, setSubTab] = useState('basicProfile')
     const [displayProfiles, setDisplayProfiles] = useState(true)
+    const [profileToEdit, setProfileToEdit] = useState(-1)
 
+    const handleEditProfile = (index) => {
+        setProfileToEdit(index)
+        setDisplayProfiles(false)
+    }
     return (
         <div className="myProfileContainer">
             <div className="subTab">
@@ -19,7 +24,7 @@ const MyProfile = ({ relativeList }) => {
                     displayProfiles ?
                         <div className="">
                             <ProfileWalletBar />
-                            <ProfileTable relativeList={relativeList} />
+                            <ProfileTable relativeList={relativeList} handleEditProfile={handleEditProfile} />
                             <div className="addNewProfile">
                                 <button className='addNewProfileButton' onClick={() => setDisplayProfiles(false)}>+ Add New Profile</button>
                             </div>
@@ -28,9 +33,9 @@ const MyProfile = ({ relativeList }) => {
                         <div className="">
                             <div className="formHeader">
                                 <i className='backButton' onClick={() => setDisplayProfiles(true)} />
-                                Add New profile
+                                {profileToEdit === -1 ? 'Add New profile' : 'Update Profile'}
                             </div>
-                            <ProfileForm />
+                            <ProfileForm profile={profileToEdit > -1 ? relativeList[profileToEdit] : null} setProfileToEdit={setProfileToEdit} />
                         </div>
                     : null
             }

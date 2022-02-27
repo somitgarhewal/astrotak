@@ -1,3 +1,5 @@
 export const getAllCategories = 'https://staging-api.astrotak.com/api/question/category/all'
 export const getAllRelatives = 'https://staging-api.astrotak.com/api/relative/all'
+export const getLocations = 'https://staging-api.astrotak.com/api/location/place?inputPlace='
 export const addRelativeProfile = 'https://staging-api.astrotak.com/api/relative'
+export const updateRelativeProfile = 'https://staging-api.astrotak.com/api/relative/update/'
