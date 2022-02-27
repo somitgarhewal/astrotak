@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ProfileWalletBar from './profileWalletBar'
 import './myProfile.scss'
 import ProfileTable from './profileTable'
+import ProfileForm from './profileForm'
 
 const MyProfile = ({ relativeList }) => {
     const [subTab, setSubTab] = useState('basicProfile')
@@ -15,13 +16,22 @@ const MyProfile = ({ relativeList }) => {
             </div>
             {
                 subTab === 'friendsAndFamily' ?
-                    <div className="">
-                        <ProfileWalletBar />
-                        <ProfileTable relativeList={relativeList} />
-                        <div className="addNewProfile">
-                            <button className='addNewProfileButton'>+ Add New Profile</button>
+                    displayProfiles ?
+                        <div className="">
+                            <ProfileWalletBar />
+                            <ProfileTable relativeList={relativeList} />
+                            <div className="addNewProfile">
+                                <button className='addNewProfileButton' onClick={() => setDisplayProfiles(false)}>+ Add New Profile</button>
+                            </div>
                         </div>
-                    </div>
+                        :
+                        <div className="">
+                            <div className="formHeader">
+                                <i className='backButton' onClick={() => setDisplayProfiles(true)} />
+                                Add New profile
+                            </div>
+                            <ProfileForm />
+                        </div>
                     : null
             }
         </div>

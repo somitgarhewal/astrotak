@@ -33,4 +33,20 @@
             border-radius: 6px;
         }
     }
+
+    .formHeader {
+        display: flex;
+        align-items: center;
+        margin-bottom: 28px;
+        
+        .backButton {
+            width: 2px;
+            border-bottom: 2.5px solid;
+            height: 2px;
+            border-left: 2.5px solid;
+            padding: 6px;
+            transform: rotate(45deg);
+            margin: 0 20px;
+        }
+    }
 }

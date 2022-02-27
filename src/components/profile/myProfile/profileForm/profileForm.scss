@@ -1,0 +1,130 @@
+.profileForm {
+
+    input, select{
+        background: #fafafa;
+        border: 1px solid #9b9b9b;
+        padding: 12px;
+        border-radius: 8px
+    }
+    label {
+        font-size: 15px;
+        color: gray;
+    }
+
+    .formName{
+        display: grid;
+        gap: 8px;
+        margin: 4px 0;
+    }
+
+    .formDOB {
+        display: grid;
+        gap: 8px;
+        margin: 4px 0;
+
+        .formDOBInputs{
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+
+            .w-33 {
+                width: 33%;
+                
+                input {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .formTOB {
+        display: grid;
+        gap: 8px;
+        margin: 4px 0;
+        .formTOBInputs {
+            display: flex;
+            justify-content: space-between;
+
+            .w-33 {
+                width: 33%;
+                
+                input {
+                    width: 100%;
+                }
+
+                div {
+                    width: 50%;
+                }
+            }
+
+            .meridiem {
+                display: flex;
+                text-align: center;
+                background: #fff;
+                border-radius: 8px;
+
+                .selectedMeridiem{
+                    background: blue;
+                    color: #fff;  
+                    border-radius: 8px; 
+                }
+                >div {
+                    align-self: center;
+                    cursor: pointer;
+                    height: 100%;
+                    padding: 12px 0;
+                }
+            }
+        }
+    }
+
+    .formPlace {
+        display: grid;
+        gap: 8px;
+        margin: 4px 0;
+
+        .css-1s2u09g-control, .css-1pahdxg-control {
+            background: #fafafa;
+            border: 1px solid #9b9b9b;
+            padding: 6px;
+            border-radius: 8px 
+        }
+    }
+
+    .row {
+        display: flex;
+        margin-bottom: 30px;
+        >div {
+            width: 50%;
+        }
+    }
+
+    .d-flex{
+        display: flex;
+    }
+
+    .formGender {
+        display: grid;
+        gap: 8px;
+        margin: 4px 0;
+    }
+
+    .formRelation {
+        display: grid;
+        gap: 8px;
+        margin: 4px 0;
+    }
+
+    .saveChanges {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 30px;
+        button {
+            padding: 8px;
+            color: #fff;
+            background: #ff944e;
+            border: none;
+            border-radius: 6px;
+        }
+    }
+}
