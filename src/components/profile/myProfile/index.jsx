@@ -13,6 +13,11 @@ const MyProfile = ({ relativeList }) => {
         setProfileToEdit(index)
         setDisplayProfiles(false)
     }
+
+    const handleAddNewProfile = () => {
+        setDisplayProfiles(false)
+        setProfileToEdit(-1)
+    }
     return (
         <div className="myProfileContainer">
             <div className="subTab">
@@ -26,7 +31,7 @@ const MyProfile = ({ relativeList }) => {
                             <ProfileWalletBar />
                             <ProfileTable relativeList={relativeList} handleEditProfile={handleEditProfile} />
                             <div className="addNewProfile">
-                                <button className='addNewProfileButton' onClick={() => setDisplayProfiles(false)}>+ Add New Profile</button>
+                                <button className='addNewProfileButton' onClick={() => handleAddNewProfile()}>+ Add New Profile</button>
                             </div>
                         </div>
                         :

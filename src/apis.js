@@ -3,3 +3,4 @@ export const getAllRelatives = 'https://staging-api.astrotak.com/api/relative/al
 export const getLocations = 'https://staging-api.astrotak.com/api/location/place?inputPlace='
 export const addRelativeProfile = 'https://staging-api.astrotak.com/api/relative'
 export const updateRelativeProfile = 'https://staging-api.astrotak.com/api/relative/update/'
+export const deleteProfile = 'https://staging-api.astrotak.com/api/relative/delete/'

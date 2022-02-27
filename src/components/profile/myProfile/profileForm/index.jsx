@@ -33,7 +33,7 @@ const ProfileForm = ({ profile, setProfileToEdit, setDisplayProfiles }) => {
             setRelation(profile.relation)
             setGender(profile.gender)
         }
-    }, [])
+    }, [profile])
 
     const converToOptions = (data) => {
         const options = data.map(item => {
@@ -193,8 +193,8 @@ const ProfileForm = ({ profile, setProfileToEdit, setDisplayProfiles }) => {
                 <div className="formGender">
                     <label>Gender</label>
                     <select onChange={(e) => setGender(e.target.value)}>
-                        <option value='MALE'>MALE</option>
                         <option value='FEMALE'>FEMALE</option>
+                        <option value='MALE'>MALE</option>
                     </select>
                 </div>
                 <div className="formRelation">

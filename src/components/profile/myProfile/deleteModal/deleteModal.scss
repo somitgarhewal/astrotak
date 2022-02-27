@@ -1,0 +1,20 @@
+.modal-content {
+    border-radius: 12px !important;
+}
+.modal.show .modal-dialog {
+    transform: none !important;
+    width: 80% !important;
+    text-align: center !important;
+    margin: 40% auto !important;
+}
+
+.modal-footer {
+    border-top: none !important;
+    justify-content: center !important;
+
+    button {
+        width: 40% !important;
+        background: #ff944e;
+        border: none !important;
+    }
+}
